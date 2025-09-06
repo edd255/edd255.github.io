@@ -1,0 +1,8 @@
+baseURL = "https://example.org/"
+languageCode = "en-us"
+title = "edd255"
+theme = ["github.com/mrmierzejewski/hugo-theme-console"]
+
+[caches]
+[caches.images]
+dir = ':cacheDir/images'
