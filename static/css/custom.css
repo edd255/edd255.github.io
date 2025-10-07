@@ -1,0 +1,5 @@
+pre, pre code {
+    overflow: hidden !important;
+    white-space: pre-wrap !important;
+    word-break: break-word;
+}
