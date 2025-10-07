@@ -1,6 +1,6 @@
 +++
 title = 'FAUST CTF 2025 - cake-configurator'
-date = '2025-09-10T11:34:57+02:00'
+date = '2025-10-02T11:34:57+02:00'
 keywords = ['ctf']
 +++
 
