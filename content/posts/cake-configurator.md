@@ -19,7 +19,7 @@ Do you know COBOL?
 No?
 Us neither!
 
-![](https://saarsec.rocks/assets/faust2025/cobol.jpg)
+{{< centerimage src="https://saarsec.rocks/assets/faust2025/cobol.jpg" alt="Dodge car" maxWidth="400px" >}}
 
 AI mostly sucks with solving entire challenges, but it's great at summarizing, so we decided to have a quick COBOL crash course with ChatGPT.
 Here are the key takeaways:
