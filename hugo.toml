@@ -16,6 +16,10 @@ math = true
 [markup.goldmark.extensions.passthrough]
 enable = true
 
+[markup.highlight]
+noClasses = false
+style = "catppuccin-mocha"
+
 [markup.goldmark.extensions.passthrough.delimiters]
 block = [['\[', '\]'], ['$$', '$$']]
 inline = [['\(', '\)']]
