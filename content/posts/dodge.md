@@ -4,7 +4,7 @@ title = 'DHM 2025 - Dodge the Creeps'
 keywords = ['ctf']
 +++
 
-In the second iteration of the [German Hacking Championship](https://hacking-meisterschaft.de/), one of the challenges featured a 2D game called "Dodge the Creeps".
+In the second iteration of the [German Hacking Championship,](https://hacking-meisterschaft.de/) one of the challenges featured a 2D game called "Dodge the Creeps".
 This game is based on one of the sample projects from the [Godot game engine,](https://docs.godotengine.org/en/3.1/getting_started/step_by_step/your_first_game.html) but written in Rust and compiled to WebAssembly.
 The goal of the challenge was to reach level 1337 in the game, which is practically impossible.
 <!--more-->
@@ -230,10 +230,8 @@ void win(int* score) {
     *score = new_score;
     if (*score == 1337) {
         uint8_t buffer[28] = {
-            0xf0, 0xf7, 0x90, 0xcd, 0x53, 0xab, 0x39, 0x23,
-            0xd1, 0xdb, 0x82, 0xd1, 0x0b, 0xfb, 0x35, 0x3c,
-            0xeb, 0xd3, 0xec, 0xdd, 0x5e, 0xc0, 0x3b, 0x17,
-            0xd3, 0x8f, 0xb9, 0xcb
+            0xf0, 0xf7, 0x90, 0xcd, 0x53, 0xab, 0x39, 0x23, 0xd1, 0xdb, 0x82, 0xd1, 0x0b, 0xfb,
+            0x35, 0x3c, 0xeb, 0xd3, 0xec, 0xdd, 0x5e, 0xc0, 0x3b, 0x17, 0xd3, 0x8f, 0xb9, 0xcb,
         };
         uint64_t hash = hasher.finish();
         for (size_t i = 0; i < sizeof(buffer); i++) {
@@ -248,7 +246,9 @@ void win(int* score) {
 }
 ```
 
-Since `rapidhash` is conveniently available as a crate, we finally translate the cleaned up code to Rust:
+We can infer that the hash is computed by feeding the `RapidHasher` instance each score up to 1337.
+The final hash value is used as a key for decrypting the flag.
+Since `rapidhash` is available as a crate, we finally translate the cleaned up code to Rust:
 
 ```rust
 use rapidhash::RapidHasher;
@@ -256,8 +256,8 @@ use std::hash::Hasher;
 
 fn decrypt() -> String {
     let mut data: [u8; 28] = [
-        0xf0, 0xf7, 0x90, 0xcd, 0x53, 0xab, 0x39, 0x23, 0xd1, 0xdb, 0x82, 0xd1, 0x0b, 0xfb, 0x35,
-        0x3c, 0xeb, 0xd3, 0xec, 0xdd, 0x5e, 0xc0, 0x3b, 0x17, 0xd3, 0x8f, 0xb9, 0xcb,
+        0xf0, 0xf7, 0x90, 0xcd, 0x53, 0xab, 0x39, 0x23, 0xd1, 0xdb, 0x82, 0xd1, 0x0b, 0xfb,
+        0x35, 0x3c, 0xeb, 0xd3, 0xec, 0xdd, 0x5e, 0xc0, 0x3b, 0x17, 0xd3, 0x8f, 0xb9, 0xcb,
     ];
     let mut rapid_hasher = RapidHasher::default();
     for score in 0..1337 {
