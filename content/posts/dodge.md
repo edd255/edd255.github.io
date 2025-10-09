@@ -9,7 +9,7 @@ This game is based on one of the sample projects from the [Godot game engine,](h
 The goal of the challenge was to reach level 1337 in the game, which is practically impossible.
 <!--more-->
 
-{{< centerimage src="https://user-images.githubusercontent.com/5276727/74889350-634f7c80-5389-11ea-9810-9e0557cfe3bd.png" alt="Dodge car" maxWidth="300px" >}}
+{{< centerimage src="https://user-images.githubusercontent.com/5276727/74889350-634f7c80-5389-11ea-9810-9e0557cfe3bd.png" maxWidth="300px" >}}
 
 By inspecting the page, we can find the Godot config:
 ```js
