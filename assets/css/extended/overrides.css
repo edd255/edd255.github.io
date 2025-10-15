@@ -4,6 +4,10 @@ pre, pre code {
     word-break: break-word;
 }
 
+:root {
+    --main-width: 800px;
+}
+
 .bg { color:#cdd6f4;background-color:#1e1e2e; }
 .chroma { color:#cdd6f4;background-color:#1e1e2e; }
 .chroma .err { color:#f38ba8 }
