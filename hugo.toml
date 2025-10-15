@@ -1,7 +1,7 @@
 baseURL = "https://edd255.github.io/"
 languageCode = "en-us"
 title = "edd255"
-theme = ["github.com/mrmierzejewski/hugo-theme-console"]
+theme = ["github.com/adityatelange/hugo-PaperMod"]
 
 [caches]
 [caches.images]
@@ -9,6 +9,12 @@ dir = ':cacheDir/images'
 
 [params]
 math = true
+title = "edd255"
+description = "I play CTFs sometimes."
+
+[params.homeInfoParams]
+Title = "Hi there 👋"
+Content = "I play CTFs sometimes."
 
 [markup]
 [markup.goldmark]
