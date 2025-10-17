@@ -3,18 +3,27 @@ languageCode = "en-us"
 title = "edd255"
 theme = ["github.com/adityatelange/hugo-PaperMod"]
 
-[caches]
-[caches.images]
-dir = ':cacheDir/images'
-
 [params]
 math = true
 title = "edd255"
-description = "I play CTFs sometimes."
+ShowReadingTime = true
+ShowShareButtons = false
+ShowPostNavLinks = false
+ShowBreadCrumbs = false
+ShowCodeCopyButtons = true
+ShowRssButtonInSectionTermList = true
 
 [params.homeInfoParams]
 Title = "Hi there 👋"
 Content = "I play CTFs sometimes."
+
+[[params.socialIcons]]
+name = "rss"
+url = "/index.xml"
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/edd255"
 
 [markup]
 [markup.goldmark]
@@ -25,3 +34,9 @@ enable = true
 [markup.goldmark.extensions.passthrough.delimiters]
 block = [['\[', '\]'], ['$$', '$$']]
 inline = [['\(', '\)']]
+
+[outputs]
+home = ["html", "rss", "json"]
+
+[caches.images]
+dir = ":cacheDir/images"
