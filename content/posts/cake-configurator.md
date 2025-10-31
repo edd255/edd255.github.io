@@ -193,7 +193,7 @@ printflags(r.recvall().decode()) # somewhere in the output there should be flags
 
 The bug is easy to fix: set `WS-SUCCESS` to `"F"` before each login attempt:
 
-{{< highlight cobol "hl_lines=6" >}}
+```cobol {hl_lines=[6]}
         PROCEDURE DIVISION USING LNK-UNAME LNK-MSG.
             PERFORM FOREVER
                 DISPLAY LOGIN-SCREEN
@@ -216,7 +216,7 @@ The bug is easy to fix: set `WS-SUCCESS` to `"F"` before each login attempt:
                 GOBACK
                 END-IF
             END-PERFORM.
-{{< /highlight >}}
+```
 
 It still leaves some edge cases (like trying to create orders while unauthenticated), but it closes this leak vector, so good enough™ for a CTF.
 
